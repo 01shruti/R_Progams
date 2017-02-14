@@ -22,3 +22,12 @@ print(round(corr1,digits=3))
 
 pairs(df,panel = points,main="Correlation plot among variables of dataset")
 ######################################################################################
+store <- tapply(oj$logmove, INDEX = list(oj$store,brands), FUN = sum, na.rm =TRUE)
+df2 <- cbind(store)
+write.table(df2, file = "store.csv",sep = ",",row.names = T)
+library(readr)
+sdata <- read_csv("G:/R_programs_git/R_Progams/store.csv", col_names = FALSE, skip = 1)
+ggplot(sdata, aes(sdata$X1)) + 
+  geom_point(aes(y = sdata$X2, color = "Dominicks")) +
+  geom_point(aes(y = sdata$X3, color = "Minute Maid")) + 
+  geom_point(aes(y = sdata$X4, color = "Tropicana")) + xlab("Store") + ylab("Number of units sold")
