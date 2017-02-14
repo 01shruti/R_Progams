@@ -53,7 +53,7 @@ summaryBy(AGE60 ~ store, data = oj, FUN = c(mean), na.rm =TRUE)
 
 ```{r}
 t.test(df$AGE60,df$EDUC)
-reg <- lm(df$AGE60~df$INCOME+df$EDUC+df$ETHNIC+df$HVAL150)
+reg <- lm(df$store~df$AGE60+df$INCOME+df$EDUC+df$ETHNIC+df$HVAL150+df$HHLARGE+df$WORKWOM+df$SSTRDIST+df$SSTRVOL+df$CPDIST5+df$CPWVOL5)
 summary(reg)
 ```
 
