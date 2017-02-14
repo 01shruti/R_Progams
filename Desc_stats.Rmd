@@ -1,0 +1,41 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
+```{r}
+library(lattice)
+par(mfrow = c(2,2))
+df <- unique(oj[c(1,7:17)]) 
+var_list<- names(df)[2:12]
+models <- lapply(var_list, 
+          function(x) 
+            {
+             mod = lm(substitute(store ~ i, list(i = as.name(x))), data = df)
+            })
+par(mfrow = c(2,2))
+invisible(lapply(models,plot))
+```
+
+```{r}
+library(ggplot2)
+df <- unique(oj[c(1,7:17)]) 
+var_list<- names(df)[2:12]
+plots <- function(i){
+                     ggplot(df, aes(x = df[i])) + 
+                     geom_histogram(aes(y = ..density..),colour = "black", 
+                                    fill = "white",binwidth = 0.02) +
+                     geom_density(alpha = 0.2, fill = "#FF6666") + 
+                     geom_vline(aes(xintercept=mean(df[i], na.rm = TRUE)),
+                                color = "red",linetype = "dashed", size = 1) +
+                     ggtitle(paste("Histogram plot of ",names(df)[i]))}
+par(mfrow = c(2,2))
+lapply(2:12,FUN = plots)
+
+
+```
+
+
