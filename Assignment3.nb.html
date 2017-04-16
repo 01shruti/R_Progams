@@ -176,37 +176,17 @@ $(document).ready(function () {
 Examine the churnTrain dataset. Using R run a decision-tree classification algorithm of your choice constructing a full unpruned tree and a pruned tree. Compare classification results of the pruned and unpruned trees generated.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI0luc3RhbGxpbmcgcGFja2FnZSBDNTBcbmluc3RhbGwucGFja2FnZXMoJ0M1MCcpXG5gYGAifQ== -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI0luc3RhbGxpbmcgcGFja2FnZSBDNTBcbiNpbnN0YWxsLnBhY2thZ2VzKCdDNTAnKVxuI0NhbGxpbmcgaW5zdGFsbGVkIGxpYnJhcnlcbmxpYnJhcnkoQzUwKVxuI0ltcG9ydCBjdXN0b21lciBjaHVybiBkYXRhc2V0XG5kYXRhKClcbmBgYCJ9 -->
 <pre class="r"><code>#Installing package C50
-install.packages('C50')</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiSW5zdGFsbGluZyBwYWNrYWdlIGludG8g46S847ixRTovVXNlcnMvU2hydXRpL0RvY3VtZW50cy9SL3dpbi1saWJyYXJ5LzMuM+OkvOO4slxuKGFzIOOkvOO4sWxpYuOkvOO4siBpcyB1bnNwZWNpZmllZClcbnRyeWluZyBVUkwgJ2h0dHBzOi8vY3Jhbi5yc3R1ZGlvLmNvbS9iaW4vd2luZG93cy9jb250cmliLzMuMy9DNTBfMC4xLjAtMjQuemlwJ1xuQ29udGVudCB0eXBlICdhcHBsaWNhdGlvbi96aXAnIGxlbmd0aCA0NzgzNzcgYnl0ZXMgKDQ2NyBLQilcbmRvd25sb2FkZWQgNDY3IEtCXG4ifQ== -->
-<pre><code>Installing package into 㤼㸱E:/Users/Shruti/Documents/R/win-library/3.3㤼㸲
-(as 㤼㸱lib㤼㸲 is unspecified)
-trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.3/C50_0.1.0-24.zip'
-Content type 'application/zip' length 478377 bytes (467 KB)
-downloaded 467 KB</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-output-begin eyJkYXRhIjoicGFja2FnZSDigJhDNTDigJkgc3VjY2Vzc2Z1bGx5IHVucGFja2VkIGFuZCBNRDUgc3VtcyBjaGVja2VkXG5cblRoZSBkb3dubG9hZGVkIGJpbmFyeSBwYWNrYWdlcyBhcmUgaW5cblx0RTpcXFVzZXJzXFxTaHJ1dGlcXEFwcERhdGFcXExvY2FsXFxUZW1wXFxSdG1weU93T2JFXFxkb3dubG9hZGVkX3BhY2thZ2VzXG4ifQ== -->
-<pre><code>package ‘C50’ successfully unpacked and MD5 sums checked
-
-The downloaded binary packages are in
-    E:\Users\Shruti\AppData\Local\Temp\RtmpyOwObE\downloaded_packages</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI0NhbGxpbmcgaW5zdGFsbGVkIGxpYnJhcnlcbmxpYnJhcnkoQzUwKVxuYGBgIn0= -->
-<pre class="r"><code>#Calling installed library
-library(C50)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoicGFja2FnZSDjpLzjuLFDNTDjpLzjuLIgd2FzIGJ1aWx0IHVuZGVyIFIgdmVyc2lvbiAzLjMuM1xuIn0= -->
-<pre><code>package 㤼㸱C50㤼㸲 was built under R version 3.3.3</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI0ltcG9ydCBjdXN0b21lciBjaHVybiBkYXRhc2V0XG5kYXRhKGNodXJuKVxuYGBgIn0= -->
-<pre class="r"><code>#Import customer churn dataset
-data(churn)</code></pre>
+#install.packages('C50')
+#Calling installed library
+library(C50)
+#Import customer churn dataset
+data()</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIk1JUzQwOTcwIERhdGEgTWluaW5nIEFzc2lnbm1lbnQgMyAtIENsYXNzaWZpY2F0aW9uIg0Kb3V0cHV0OiBodG1sX25vdGVib29rDQotLS0NCg0KUTQgSW5zdGFsbAlSCXBhY2thZ2UJ4oCcQzUw4oCdLglJbXBvcnQJY3VzdG9tZXIJY2h1cm4JZGF0YXNldAkoY2h1cm4pCXVzaW5nCWRhdGEoKSBmdW5jdGlvbi4JCQ0KRXhhbWluZQl0aGUJY2h1cm5UcmFpbiBkYXRhc2V0LiBVc2luZwlSCXJ1bglhCWRlY2lzaW9uLXRyZWUJY2xhc3NpZmljYXRpb24JYWxnb3JpdGhtCW9mCXlvdXIgY2hvaWNlCWNvbnN0cnVjdGluZwlhCWZ1bGwJdW5wcnVuZWQJdHJlZQlhbmQJYQlwcnVuZWQJdHJlZS4JQ29tcGFyZQljbGFzc2lmaWNhdGlvbglyZXN1bHRzCW9mIHRoZQlwcnVuZWQJYW5kCXVucHJ1bmVkCXRyZWVzIGdlbmVyYXRlZC4NCmBgYHtyfQ0KI0luc3RhbGxpbmcgcGFja2FnZSBDNTANCiNpbnN0YWxsLnBhY2thZ2VzKCdDNTAnKQ0KDQojQ2FsbGluZyBpbnN0YWxsZWQgbGlicmFyeQ0KbGlicmFyeShDNTApDQoNCiNJbXBvcnQgY3VzdG9tZXIgY2h1cm4gZGF0YXNldA0KZGF0YShjaHVybikNCg0KYGBg</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIk1JUzQwOTcwIERhdGEgTWluaW5nIEFzc2lnbm1lbnQgMyAtIENsYXNzaWZpY2F0aW9uIg0Kb3V0cHV0OiBodG1sX25vdGVib29rDQotLS0NCg0KUTQgSW5zdGFsbAlSCXBhY2thZ2UJ4oCcQzUw4oCdLglJbXBvcnQJY3VzdG9tZXIJY2h1cm4JZGF0YXNldAkoY2h1cm4pCXVzaW5nCWRhdGEoKSBmdW5jdGlvbi4JCQ0KRXhhbWluZQl0aGUJY2h1cm5UcmFpbiBkYXRhc2V0LiBVc2luZwlSCXJ1bglhCWRlY2lzaW9uLXRyZWUJY2xhc3NpZmljYXRpb24JYWxnb3JpdGhtCW9mCXlvdXIgY2hvaWNlCWNvbnN0cnVjdGluZwlhCWZ1bGwJdW5wcnVuZWQJdHJlZQlhbmQJYQlwcnVuZWQJdHJlZS4JQ29tcGFyZQljbGFzc2lmaWNhdGlvbglyZXN1bHRzCW9mIHRoZQlwcnVuZWQJYW5kCXVucHJ1bmVkCXRyZWVzIGdlbmVyYXRlZC4NCmBgYHtyfQ0KI0luc3RhbGxpbmcgcGFja2FnZSBDNTANCiNpbnN0YWxsLnBhY2thZ2VzKCdDNTAnKQ0KDQojQ2FsbGluZyBpbnN0YWxsZWQgbGlicmFyeQ0KbGlicmFyeShDNTApDQoNCiNJbXBvcnQgY3VzdG9tZXIgY2h1cm4gZGF0YXNldA0KZGF0YSgpDQoNCmBgYA==</div>
 
 
 

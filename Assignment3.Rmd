@@ -13,6 +13,6 @@ Examine	the	churnTrain dataset. Using	R	run	a	decision-tree	classification	algor
 library(C50)
 
 #Import customer churn dataset
-data(churn)
+data()
 
 ```
