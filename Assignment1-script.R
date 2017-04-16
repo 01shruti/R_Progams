@@ -74,7 +74,7 @@ tapply(oj$price, INDEX=list(oj$week,brands),FUN=mean,na.rm=TRUE)
 indbrand <- tapply(oj$price, INDEX=list(oj$week,oj$brand),FUN=mean,na.rm=TRUE)
 allbrands <- tapply(oj$price,oj$week,FUN=mean,na.rm=TRUE)
 frame <- cbind(allbrands,indbrand)
-write.table(df, file = 'brand.csv',sep = ",",row.names = T)
+write.table(frame, file = 'brand.csv',sep = ",",row.names = T)
 library(readr)
 branddata <- read_csv("brand.csv",col_names = FALSE, skip = 1)
 ggplot(data = branddata, aes(branddata$X1,xlab="Week")) + 
@@ -91,8 +91,7 @@ tapply(oj$logmove,adcap,FUN=sum,na.rm=TRUE)
 #Affected sales by advertisement based on brands
 sales <- tapply(exp(oj$logmove), oj[,c("feat","brand")], sum)
 print(sales)
-mosaicplot(salestable,col=rainbow(3), main = "Affected sales on using advertisement", xlab = "Advertisement (0- without promotion, 1- With promotion)", ylab = "Brand")
-
+mosaicplot(sales,col=rainbow(3), main = "Affected sales on using advertisement", xlab = "Advertisement (0- without promotion, 1- With promotion)", ylab = "Brand")
 ##################################################################################################################################
 #To plot graph between mean weekly price without a promotion and with a promotion
 pdata <- tapply(oj$logmove,list(Week=oj$week,oj$feat),FUN=mean,na.rm=TRUE)
