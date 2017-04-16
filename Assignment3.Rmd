@@ -1,0 +1,18 @@
+---
+title: "MIS40970 Data Mining Assignment 3 - Classification"
+output: html_notebook
+---
+
+Q4 Install	R	package	“C50”.	Import	customer	churn	dataset	(churn)	using	data() function.		
+Examine	the	churnTrain dataset. Using	R	run	a	decision-tree	classification	algorithm	of	your choice	constructing	a	full	unpruned	tree	and	a	pruned	tree.	Compare	classification	results	of the	pruned	and	unpruned	trees generated.
+```{r}
+#Installing package C50
+#install.packages('C50')
+
+#Calling installed library
+library(C50)
+
+#Import customer churn dataset
+data(churn)
+
+```
